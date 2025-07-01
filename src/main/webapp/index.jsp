@@ -2,62 +2,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Welcome | JSP Portal</title>
+    <title>Welcome Page</title>
     <style>
-        /* Reset and base styling */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body, html {
-            height: 100%;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow-x: hidden;
-        }
-
-        /* Background Animation */
         body {
-            background: linear-gradient(-45deg, #1f4037, #99f2c8, #1f4037, #99f2c8);
-            background-size: 400% 400%;
-            animation: animatedBG 12s ease infinite;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
             display: flex;
-            justify-content: center;
             align-items: center;
-            flex-direction: column;
-            position: relative;
+            justify-content: center;
+            background: linear-gradient(-45deg, #1d2b64, #f8cdda, #1d2b64, #f8cdda);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
         }
 
-        @keyframes animatedBG {
+        @keyframes gradientBG {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
-        /* Glassmorphism Card */
-        .card {
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 500px;
-            width: 90%;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            color: #fff;
+        .container {
             text-align: center;
-            animation: fadeIn 1.5s ease;
+            color: white;
+            animation: fadeIn 2s ease-in;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
         h1 {
             font-size: 3rem;
             margin-bottom: 10px;
-            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(255,255,255,0.2);
         }
 
         p {
@@ -66,30 +45,22 @@
         }
 
         .btn {
-            background: #ffffff;
-            color: #1f4037;
-            padding: 14px 30px;
+            padding: 12px 28px;
+            font-size: 1.1rem;
             border: none;
             border-radius: 30px;
-            font-size: 1.1rem;
+            background-color: #ffffff;
+            color: #1d2b64;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 10px rgba(255,255,255,0.4);
         }
 
         .btn:hover {
-            background: #1f4037;
+            background-color: #1d2b64;
             color: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        /* SVG Wave */
-        .wave {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
+            box-shadow: 0 0 20px rgba(255,255,255,0.6);
+            transform: scale(1.05);
         }
 
         @media (max-width: 600px) {
@@ -99,17 +70,12 @@
     </style>
 </head>
 <body>
-
-    <div class="card">
-        <h1>Welcome to the Portal</h1>
-        <p>Start your journey with our new animated JSP experience!</p>
+    <div class="container">
+        <h1>Welcome to My Website</h1>
+        <p>Your animated JSP experience starts here!</p>
         <form action="nextPage.jsp">
             <button class="btn">Get Started</button>
         </form>
     </div>
-
-    <!-- SVG Wave -->
-    <svg class="wave" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="0.3" d="M0,64L48,58.7C96,53,192,43,288,53.3C384,64,480,96,576,112C672,128,768,128,864,144C960,160,1056,192,1152,186.7C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-
 </body>
 </html>
